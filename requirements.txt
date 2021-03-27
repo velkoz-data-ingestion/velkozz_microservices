@@ -1,0 +1,4 @@
+-e git+https://github.com/MatthewTe/velkoz_web_data_extraction_library.git@b505f18bf79755a49459c57e2f6fb41776c72051#egg=velkoz_web_packages
+-e git+https://github.com/velkoz-data-ingestion/velkozz_external_api.git@ba370052b676197441ca94d4c7fce52e561a4b10#egg=velkozz_pipeline_api
+-e git+https://github.com/velkoz-data-ingestion/velkozz_web_api_pywrapper.git@41e2c655cf3903bb1322ab0337acb07099a7cc18#egg=velkozz_pywrapper
+python-dotenv==0.15.0

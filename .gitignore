@@ -51,6 +51,12 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# DotEnv and Other Config Files:
+*.txt
+!*_example.txt*
+!requirements.txt
+*.env
+
 # Translations
 *.mo
 *.pot
