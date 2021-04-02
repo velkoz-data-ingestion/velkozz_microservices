@@ -1,0 +1,14 @@
+services:
+  reddit-pipeline:
+    build: microservices/reddit_data_ingestion/
+    env_file:
+      - microservices/reddit_data_ingestion/.reddit.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - velkozz_web_api_velkozz-api-network
+
+
+networks:
+  velkozz_web_api_velkozz-api-network:
+    external: true
