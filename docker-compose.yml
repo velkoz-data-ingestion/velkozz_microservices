@@ -7,8 +7,16 @@ services:
       - PYTHONUNBUFFERED=1
     networks:
       - velkozz_web_api_velkozz-api-network
-
-
+  
+  social-media-quant-pipeline:
+    build: microservices/social_media_quant_ingestion/
+    env_file: 
+      - microservices/social_media_quant_ingestion/.quant.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - velkozz_web_api_velkozz-api-network      
+    
 networks:
   velkozz_web_api_velkozz-api-network:
     external: true
