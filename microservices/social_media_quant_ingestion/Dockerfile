@@ -1,8 +1,8 @@
 FROM python
 
-COPY . /app/reddit_pipeline/
+COPY . /app/social_media_quant_pipeline/
  
-WORKDIR /app/reddit_pipeline/
+WORKDIR /app/social_media_quant_pipeline/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
