@@ -43,7 +43,7 @@ def write_indeed_data():
             IndeedJobListingsPipeline(
             job,
             location,   
-            1,
+            3,
             VELKOZZ_API_URL = web_api_url,
             token = config["velkozz_account"]["VELKOZZ_TOKEN"])
 
@@ -58,9 +58,8 @@ if test_schedule_stat == "True": # Boolean read from file is string. Too lazy to
     indeed_scheduler.add_job(write_indeed_data, "interval", minutes=5)
 else:
     print("Job added with Production Scheduler")
-    indeed_scheduler.add_job(write_indeed_data, "interval", hours=12)
+    indeed_scheduler.add_job(write_indeed_data, "interval", hours=6)
 
 indeed_scheduler.start()
-
 
 

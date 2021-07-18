@@ -2,3 +2,4 @@
 python-dotenv
 requests
 APScheduler
+beautifulsoup4
