@@ -1,3 +1,4 @@
+version: "3.9"
 services:
   reddit-pipeline:
     build: microservices/reddit_data_ingestion/
