@@ -22,6 +22,10 @@ config.read(".indeed.env")
 # Loading indeed job post configurations:
 test_schedule_stat = config["velkozz_account"]["TEST_SCHEDULE"]
 web_api_url = config["velkozz_account"]["VELKOZZ_API_URL"]
+
+logger_host = config["velkozz_logger_config"]["LOGGER_HOST"]
+logger_url = config["velkozz_logger_config"]["LOGGER_URL"]
+
 indeed_jobs_lst_file = "indeed_ingestion.txt"
 
 print(f"Indeed Jobs Ingestion Script Active: \n -Test Scheduler: {test_schedule_stat} \n -url:{web_api_url} \n -Indeed Jobs List Path: {indeed_jobs_lst_file}")  
@@ -45,8 +49,9 @@ def write_indeed_data():
             location,   
             3,
             VELKOZZ_API_URL = web_api_url,
-            token = config["velkozz_account"]["VELKOZZ_TOKEN"])
-
+            token = config["velkozz_account"]["VELKOZZ_TOKEN"],
+            LOGGER_HOST=logger_host,
+            LOGGER_URL=logger_url)
             # Sleeping to avoid overloading the REST API:
             time.sleep(20)
     time.sleep(10)

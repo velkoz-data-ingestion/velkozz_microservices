@@ -22,6 +22,10 @@ config.read(".reddit.env")
 # Extracting config params:
 test_schedule_stat = config["velkozz_account"]["TEST_SCHEDULE"]
 web_api_url = config["velkozz_account"]["VELKOZZ_API_URL"]
+
+logger_host = config["velkozz_logger_config"]["LOGGER_HOST"]
+logger_url = config["velkozz_logger_config"]["LOGGER_URL"]
+
 subreddit_lst_file = "reddit_ingestion.txt"
 
 print(f"Reddit Ingestion Script Active: \n -Test Scheduler: {test_schedule_stat} \n -url:{web_api_url} \n -Subreddit List Path: {subreddit_lst_file}")  
@@ -41,8 +45,9 @@ def write_subreddit_data():
             CLIENT_SECRET = config["praw_params"]["CLIENT_SECRET"],
             USER_AGENT = config["praw_params"]["USER_AGENT"],
             VELKOZZ_API_URL = config["velkozz_account"]["VELKOZZ_API_URL"],
-            token = config["velkozz_account"]["VELKOZZ_TOKEN"]
-        )
+            token = config["velkozz_account"]["VELKOZZ_TOKEN"],
+            LOGGER_HOST=logger_host,
+            LOGGER_URL=logger_url)
         # Sleeping to avoid overloading the REST API:
         time.sleep(10)
 

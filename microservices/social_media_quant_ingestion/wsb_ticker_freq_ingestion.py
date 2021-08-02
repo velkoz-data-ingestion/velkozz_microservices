@@ -23,11 +23,18 @@ config.read(".quant.env")
 test_schedule_stat = config["velkozz_account"]["TEST_SCHEDULE"]
 web_api_url = config["velkozz_account"]["VELKOZZ_API_URL"]
 
+logger_host = config["velkozz_logger_config"]["LOGGER_HOST"]
+logger_url = config["velkozz_logger_config"]["LOGGER_URL"]
+
 print(f"WallstreetBets Frequency Ticker Counts Ingestion Script Active: \n -Test Scheduler: {test_schedule_stat} \n -url:{web_api_url}")
 
 # Function that executes ETL pipeline job:
 def write_wsb_freq_count():
-    WSBTickerFrequencyPipeline(token=config["velkozz_account"]["TOKEN"], url=web_api_url)
+    WSBTickerFrequencyPipeline(
+        token=config["velkozz_account"]["TOKEN"],
+        url=web_api_url,
+        LOGGER_HOST=logger_host,
+        LOGGER_URL=logger_url)
 
 # Adding the main function to the Scheduler:
 # Config for rapid development testing:
