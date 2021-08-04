@@ -18,14 +18,14 @@ services:
     networks:
       - velkozz_web_api_velkozz-api-network      
 
-  indeed-job-listings-pipeline:
-    build: microservices/indeed_data_ingestion/
-    env_file: 
-      - microservices/indeed_data_ingestion/.indeed.env
-    environment: 
-      - PYTHONUNBUFFERED=1
-    networks:
-      - velkozz_web_api_velkozz-api-network      
+#  indeed-job-listings-pipeline:
+#    build: microservices/indeed_data_ingestion/
+#    env_file: 
+#      - microservices/indeed_data_ingestion/.indeed.env
+#    environment: 
+#      - PYTHONUNBUFFERED=1
+#    networks:
+#      - velkozz_web_api_velkozz-api-network      
 
 
 networks:
