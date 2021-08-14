@@ -21,7 +21,7 @@ services:
   daily-youtube-channel-stats-pipeline:
     build: microservices/youtube_data_ingestion/
     env_file:
-      - microservices/youtube_data_ingestion/.youtubb.env
+      - microservices/youtube_data_ingestion/.youtube.env
     environment:
       - PYTHONUNBUFFERED=1
     networks:
