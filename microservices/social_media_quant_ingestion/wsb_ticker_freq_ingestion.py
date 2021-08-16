@@ -32,7 +32,7 @@ print(f"WallstreetBets Frequency Ticker Counts Ingestion Script Active: \n -Test
 def write_wsb_freq_count():
     WSBTickerFrequencyPipeline(
         token=config["velkozz_account"]["TOKEN"],
-        url=web_api_url,
+        VELKOZZ_API_URL=web_api_url,
         LOGGER_HOST=logger_host,
         LOGGER_URL=logger_url)
 
